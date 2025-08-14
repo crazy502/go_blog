@@ -1,5 +1,6 @@
 package config
 
+// ES Elasticsearch 配置
 type ES struct {
 	URL            string `json:"url" yaml:"url"`                           // Elasticsearch 服务的 URL，例如 http://localhost:9200
 	Username       string `json:"username" yaml:"username"`                 // Elasticsearch 登录用户名
