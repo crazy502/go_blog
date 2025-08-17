@@ -2,11 +2,11 @@ captcha:
   height: 80
   width: 240
   length: 6
-  max_skew: 0.7
-  dot_count: 80
+  max_skew: 0.7              # 单个数字的最大偏斜因子（绝对值
+  dot_count: 80              # 背景圆点数量
 
 email:
-  host: smtp.qq.com
+  host: smtp.qq.com          # 邮箱服务器地址
   port: 465
   from: xxx@qq.com
   nickname: LL
@@ -54,19 +54,19 @@ redis:
   password: ""
   db: 0
 system:
-  host: 0.0.0.0
-  port: 8080
-  env: release
-  router_prefix: api
-  use_multipoint: true
+  host: 0.0.0.0          # 监听地址
+  port: 8080             # 监听端口
+  env: release           # 运行环境
+  router_prefix: api     # 路由前缀
+  use_multipoint: true   # 是否启用多点登录
   sessions_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  oss_type: local
+  oss_type: local        # 存储类型，目前支持本地存储、七牛云存储、腾讯云存储
 upload:
   size: 20
   path: uploads
 website:
   logo: ""
-  full_logo: ""
+  full_logo: ""            # 全屏logo
   title: 博客标题-Crazy的个人博客
   slogan: 博客标题
   slogan_en: Blog Title
@@ -82,12 +82,29 @@ website:
   job: 工作
   address: 地址
   email: xxx@qq.com
-  qq_image: ""
-  wechat_image: ""
+  qq_image: ""                 # QQ二维码图片地址
+  wechat_image: ""             # 微信二维码图片地址
 zap:
-  level: info
-  filename: log/go_blog.log
-  max_size: 200
-  max_backups: 30
-  max_age: 5
-  is_console_print: true
+  level: info                # debug, info, warn, error, dpanic, panic, fatal，默认info
+  filename: log/go_blog.log  # 日志文件名
+  max_size: 200              # 每个日志文件最大大小，单位MB
+  max_backups: 30            # 日志文件最多保存个数
+  max_age: 5                 # 日志文件最多保存时间，单位天
+  is_console_print: true     # 是否打印到控制台
+
+#该文件是整个博客项目的配置中心，包括数据库、缓存、日志、上传、邮箱、CAPTCHA等配置项。
+# 实现模块化配置，使得项目更加灵活、可扩展。
+
+
+#YAML任是一种标记语言，其基本语法规则如下：
+#1. 大小写敏感
+#2. 使用缩进表示层级关系
+#3. 使用空格或制表符进行缩进
+#4. 缩进的空格数目不重要，只要相同层级的元素左侧对齐即可
+#5. #表示注释，从这个字符到行尾都被忽略
+#6. 句末加上分号表示语句结束
+#7. 多个连续的空格或制表符会被视为空格
+#支持的数据类型：
+#1. 对象：键值对的集合，使用冒号对键值进行分隔，每个键值对之间使用逗号分隔
+#2. 数组：一组按次序排列的值，使用方括号进行表示，每个值之间使用逗号分隔
+#3. 字符串：一串文本，使用双引号或单引号表示，支持转义字符
