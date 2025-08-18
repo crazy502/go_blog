@@ -10,3 +10,8 @@ type Email struct {
 	Secret   string `json:"secret" yaml:"secret"`     //发件人邮箱的密码或应用专用密码，用于身份验证
 	IsSSL    bool   `json:"is_ssl" yaml:"is_ssl"`     // 是否使用 SSL 加密连接
 }
+
+/*
+核心功能：需要一个邮件发送功能来发送验证码、通知等邮件。
+支持各种主流邮件服务商，只需正确配置对应参数即可。
+*/
