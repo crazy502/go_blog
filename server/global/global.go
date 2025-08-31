@@ -1,5 +1,7 @@
 package global
 
+//全局对象包
+
 import (
 	"github.com/elastic/go-elasticsearch/v8"
 	"github.com/go-redis/redis"
@@ -9,8 +11,6 @@ import (
 
 	"server/config"
 )
-
-//全局对象包
 
 var (
 	Config     *config.Config
