@@ -32,7 +32,7 @@ mysql:
   config: charset=utf8mb4&parseTime=True&loc=Local
   db_name: blog_db
   username: root
-  password: 123456
+  password: root
   max_idle_conns: 10
   max_open_conns: 100
   log_mode: info
@@ -65,8 +65,8 @@ upload:
   size: 20
   path: uploads
 website:
-  logo: ""
-  full_logo: ""            # 全屏logo
+  logo: ""                 # 网站logo,前端传递
+  full_logo: ""            # 全屏logo，前端传递
   title: 博客标题-Crazy的个人博客
   slogan: 博客标题
   slogan_en: Blog Title
