@@ -1,6 +1,6 @@
 package config
 
-// Zap 日志配置，详情可参考七米的博客 https://liwenzhou.com/posts/Go/zap/
+// Zap 日志配置，详情可参考七米的博客 https://l iwenzhou.com/posts/Go/zap/
 type Zap struct {
 	Level          string `json:"level" yaml:"level"`                       // 日志等级，无特殊需求，用 info 即可
 	Filename       string `json:"filename" yaml:"filename"`                 // 日志文件的位置
