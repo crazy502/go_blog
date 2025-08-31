@@ -15,3 +15,5 @@ type Config struct {
 	Website Website `json:"website" yaml:"website"`
 	Zap     Zap     `json:"zap" yaml:"zap"`
 }
+
+//把所有的配置写成一个结构体，方便统一管理和使用
