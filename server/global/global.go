@@ -1,7 +1,5 @@
 package global
 
-//全局对象包
-
 import (
 	"github.com/elastic/go-elasticsearch/v8"
 	"github.com/go-redis/redis"
