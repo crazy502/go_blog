@@ -8,6 +8,8 @@ import (
 )
 
 // System 系统配置
+// 用于配置系统参数，如主机地址、端口号、环境类型、路由前缀、多点登录拦截、会话密钥、对象存储类型等
+// 大部分字段使用了"-"，表示这些字段在配置文件中不可见，仅用于程序内部使用
 type System struct {
 	Host           string `json:"-" yaml:"host"`                          // 服务器绑定的主机地址，通常为 0.0.0.0 表示监听所有可用地址
 	Port           int    `json:"-" yaml:"port"`                          // 服务器监听的端口号，通常用于 HTTP 服务
@@ -18,6 +20,8 @@ type System struct {
 	OssType        string `json:"oss_type" yaml:"oss_type"`               // 对应的对象存储服务类型，如 "local" 或 "qiniu"
 }
 
+// Addr 获取服务器监听地址
+// 返回服务器监听地址，格式为 "host:port"，如 "0.0.0.0:8080"
 func (s System) Addr() string {
 	return fmt.Sprintf("%s:%d", s.Host, s.Port)
 }
