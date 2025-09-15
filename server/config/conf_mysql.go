@@ -20,9 +20,14 @@ type Mysql struct {
 	LogMode      string `json:"log_mode" yaml:"log_mode"`             // 日志模式，例如 "info" 或 "silent"，用于控制日志输出
 }
 
+// Dsn 数据库连接串
+// 返回数据库连接串，格式为：username:password@tcp(host:port)/dbname?config
 func (m Mysql) Dsn() string {
 	return m.Username + ":" + m.Password + "@tcp(" + m.Host + ":" + strconv.Itoa(m.Port) + ")/" + m.DBName + "?" + m.Config
 }
+
+// LogLevel 日志级别
+// 返回日志级别，默认为 Info
 func (m Mysql) LogLevel() logger.LogLevel {
 	switch strings.ToLower(m.LogMode) {
 	case "silent", "Silent":
