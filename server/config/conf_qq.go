@@ -8,6 +8,8 @@ type QQ struct {
 	RedirectURL string `json:"redirect_url" yaml:"redirect_url"` // QQ 登录回调地址
 }
 
+// 目的: 用于生成 QQ 登录的 URL
+// OAuth2.0 登录流程: https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=YOUR_APP_ID&redirect_uri=YOUR_REDIRECT_URI
 func (qq QQ) QQLoginURL() string {
 	return "https://graph.qq.com/oauth2.0/authorize?" +
 		"response_type=code&" +
