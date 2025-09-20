@@ -22,3 +22,5 @@ type User struct {
 	Register  appTypes.Register `json:"register"`                                      // 注册来源
 	Freeze    bool              `json:"freeze"`                                        // 用户是否被冻结
 }
+
+//Password的JSON标签为"-"，表示不序列化该字段（密码不返回给前端）
